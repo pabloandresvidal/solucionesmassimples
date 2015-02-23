@@ -19,7 +19,7 @@ MEDIA_URL = '/media/'
 # Absolute path to the directory static files should be collected to. Don't put
 # anything in this directory yourself; store your static files in apps' static/
 # subdirectories and in STATICFILES_DIRS.
-STATIC_ROOT = '/home/pablovidal/webapps/static'
+STATIC_ROOT = '/home/pablovidal/webapps/solucionesmassimplesstatic/'
 
 # URL prefix for static files.
 STATIC_URL = '/static/'
@@ -29,7 +29,7 @@ ADMIN_MEDIA_PREFIX = '/static/admin/'
 
 # Additional locations of static files.
 STATICFILES_DIRS = (
-    normpath(join(DJANGO_ROOT, 'static')),
+    '/home/pablovidal/webapps/solucionesmasimples/solucionesmassimples/static',
 )
 
 ROOT_URLCONF = 'solucionessimples.urls'
