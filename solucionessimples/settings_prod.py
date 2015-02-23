@@ -34,7 +34,7 @@ STATICFILES_DIRS = (
 
 ROOT_URLCONF = 'solucionessimples.urls'
 
-WSGI_APPLICATION = 'solucionessimples.wsgi.application'
+WSGI_APPLICATION = 'solucionessimples.wsgi_prod.application'
 
 
 # Database
