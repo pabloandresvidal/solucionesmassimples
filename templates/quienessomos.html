@@ -1,0 +1,135 @@
+{%extends "base.html" %}
+
+{% block subheader %}
+
+<!-- SUBHEADER
+================================================== -->
+<div id="subheader">
+	<div class="row">
+		<div class="twelve columns">
+			<p class="left">
+				 QUIENES SOMOS
+			</p>
+		</div>
+	</div>
+</div>
+<div class="hr">
+</div>
+
+{% endblock subheader %}
+
+{% block content %}
+<!-- CONTENT 
+================================================== -->
+{% load cms_tags %}
+<div class="row">
+    <!-- MAIN CONTENT-->
+	<div class="eight columns">
+	    <!-- Our History-->
+		<div class="sectiontitle">
+			<h4>Quiénes Somos</h4>
+		</div>
+        {% static_placeholder "TextoQuienesSomos" %}
+		{% comment %}<div class="panel">
+			<p>
+				<b>Phasellus luctus ante in eros suscipit aliquet. Donec convallis scelerisque tellus, quis vulputate lacus laoreet sed. Mauris vitae ultricies neque. Nullam arcu neque, posuere et accumsan quis, euismod id leo. Donec tristique, nisi vel tincidunt faucibus, velit eros pulvinar leo, in sollicitudin nisi nibh ac arcu.</b>
+			</p>
+			<p class="text-right">
+				<i>Soluciones + Simples</i>
+			</p>
+		</div>{% endcomment %}
+		<br/>
+
+        <div class="sectiontitle">
+            <h4>¿Por qué escogernos?</h4>
+        </div>
+        {% static_placeholder "Texto1" %}
+        <br/><br/>
+
+        <div class="sectiontitle">
+			<h4>Manejo de Cotizaciones</h4>
+		</div>
+        {% static_placeholder "Texto2" %}
+        <br/><br/>
+
+		{% comment %}<!-- Accordion-->
+		<dl class="tabs">
+			<dd class="active"><a href="#simple1">¿Por qué escogernos?</a></dd>
+			{% endcomment %}{% comment %}<dd><a href="#simple2">¿Cómo trabajamos?</a></dd>{% endcomment %}{% comment %}
+			<dd><a href="#simple2">Manejo de Cotizaciones</a></dd>
+		</dl>
+		<ul class="tabs-content">
+			<li class="active" id="simple1Tab">
+
+			</li>
+			<li id="simple2Tab">
+                {% static_placeholder "TextoTab2" %}
+            </li>
+			{% endcomment %}{% comment %}<li id="simple3Tab">This is simple tab 3's content. It's, you know...okay. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et non ex maxima parte de tota iudicabis? Item de contrariis, a quibus ad genera formasque generum.</li>{% endcomment %}{% comment %}
+		</ul>{% endcomment %}
+	</div><!-- end main content-->
+
+	<!-- SIDEBAR-->
+	<div class="four columns">
+		<div class="teamwrap teambox">
+			<img src="{{ MEDIA_URL }}images/Equipo/LuisFelipeCaicedo2.jpg" alt="">
+			<div class="mask">
+				<h2>Luis Felipe Caicedo</h2>
+				<p>
+                    Arquitecto Especialista en Proyectos Inmobiliarios Sostenibles
+					<div class="social socialteam facebook">
+						<a href="https://www.facebook.com/pages/LFC-Arquitectos/131855413555890"></a>
+					</div>
+				</div>
+			</div>
+        {% comment %}
+			<div class="teamwrap teambox">
+				<img src="{{ MEDIA_URL }}images/Equipo/LuisFelipeCaicedo2.jpg" alt="">
+				<div class="mask">
+					<h2>Otra Persona</h2>
+					<p>
+						<div class="social socialteam facebook">
+							<a href="#"></a>
+						</div>
+						<div class="social socialteam twitter">
+							<a href="#"></a>
+						</div>
+						<div class="social socialteam deviantart">
+							<a href="#"></a>
+						</div>
+						<div class="social socialteam flickr">
+							<a href="#"></a>
+						</div>
+						<div class="social socialteam dribbble">
+							<a href="#"></a>
+						</div>
+					</div>
+			</div>
+			<div class="teamwrap teambox">
+					<img src="images/temp/team3.jpg" alt="">
+					<div class="mask">
+						<h2>Otra Persona</h2>
+						<p>
+							One of our best shooting model, working for this company since the beginning.
+							<div class="social socialteam facebook">
+								<a href="#"></a>
+							</div>
+							<div class="social socialteam twitter">
+								<a href="#"></a>
+							</div>
+							<div class="social socialteam deviantart">
+								<a href="#"></a>
+							</div>
+							<div class="social socialteam flickr">
+								<a href="#"></a>
+							</div>
+							<div class="social socialteam dribbble">
+								<a href="#"></a>
+							</div>
+					</div>
+			</div>{% endcomment %}
+	</div><!-- end sidebar -->
+</div>
+<div class="hr">
+</div>
+{% endblock content %}

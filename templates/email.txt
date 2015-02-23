@@ -1,0 +1,3 @@
+Nueva cotización Soluciones + Simples
+
+{{ form }}

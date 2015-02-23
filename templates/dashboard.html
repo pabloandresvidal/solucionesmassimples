@@ -1,0 +1,119 @@
+{%extends "base.html" %}
+
+
+{% block subheader %}
+<body>
+<!-- SUBHEADER
+================================================== -->
+<div id="subheader">
+	<div class="row">
+		<div class="twelve columns">
+			<p class="left">
+				 Bienvenido: {{ request.user }}
+			</p>
+		</div>
+	</div>
+</div>
+<div class="hr">
+</div>
+{% endblock subheader %}
+
+{% block content %}
+<div class="hr">
+</div>
+<!-- CONTENT
+================================================== -->
+<div class="row">
+    <!-- MAIN CONTENT-->
+	<div class="twelve columns">
+		<!-- Services List-->
+		<div class="six columns noleftmargin">
+			<h5 class="sidebartitle">CREAR TRABAJO</h5>
+            <a href="/trabajo" class="button">Crear Trabajo</a>
+		</div>
+		<div class="six columns noleftmargin">
+			<h5 class="sidebartitle">REPORTAR TRABAJO DIARIO</h5>
+            <a href="/reporte" class="button">Crear Reporte de Trabajo Diario</a>
+		</div>
+        <br/>
+        <br/>
+        <div class="six columns noleftmargin">
+			<h5 class="sidebartitle">MIS TRABAJOS</h5>
+            <a href="/mistrabajos" class="button">Ver Mis Trabajos</a>
+		</div>
+        <div class="six columns noleftmargin">
+			<h5 class="sidebartitle">MIS REPORTES DIARIOS</h5>
+            <a href="/misreportesdiarios" class="button">Ver Mis Reportes Diarios</a>
+		</div>
+        <br/>
+        <br/>
+        {% if request.user.is_superuser %}
+
+            <div class="six columns noleftmargin">
+                <h5 class="sidebartitle">TODOS LOS TRABAJOS</h5>
+                <a href="/todostrabajos" class="button">Ver todos los trabajos</a>
+            </div>
+
+            <div class="six columns noleftmargin">
+                <h5 class="sidebartitle">TODOS LOS REPORTES DIARIOS</h5>
+                <a href="/todosreportesdiarios" class="button">Ver todos los reportes diarios</a>
+            </div>
+
+        {% endif %}
+		<div class="clear">
+		</div>
+		<br/>
+		{% comment %}<div class="panel">
+			<p>
+				<b>Phasellus luctus ante in eros suscipit aliquet. Donec convallis scelerisque tellus, quis vulputate lacus laoreet sed. Mauris vitae ultricies neque. Nullam arcu neque, posuere et accumsan quis, euismod id leo. Donec tristique, nisi vel tincidunt faucibus, velit eros pulvinar leo, in sollicitudin nisi nibh ac arcu.</b>
+			</p>
+		</div>	{% endcomment %}
+	</div><!-- end main content-->
+
+    {% comment %}<!-- SIDEBAR-->
+	<div class="three columns">
+	    <!-- Free Quote Form-->
+		<h5>¿Tienes algún comentario para mejorar la herramienta?</h5>
+		<p>
+			Por favor dejanos un mensaje en <a href="/cotizador/"> CONTACTO </a> y te responderemos lo mas rápido posible.
+		</p>
+		{% endcomment %}{% comment %}<div class="form">
+			<form method="post" action="contact.php" id="contactform">
+				<input type="text" name="name" class="smoothborder" placeholder="Your name *"/>
+				<input type="text" name="email" class="smoothborder" placeholder="E-mail address *"/>
+				<textarea name="comment" class="smoothborder" rows="6" placeholder="Describe your project *"></textarea>
+				<input type="submit" id="submit" class="readmore" value="Submit">
+			</form>
+		</div>{% endcomment %}{% comment %}
+		<br/>
+		<!-- Accordion-->
+		{% endcomment %}{% comment %}<ul class="accordion">
+			<li class="active">
+			<div class="title">
+				<b>Don't miss our treats</b>
+			</div>
+			<div class="content accordiontrick">
+				<p>
+					 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+				</p>
+			</div>
+			</li>
+			<li class="">
+			<div class="title">
+				<b>Holiday Services</b>
+			</div>
+			<div class="content accordiontrick">
+				<p>
+					 Dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+				</p>
+				<p>
+					 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+				</p>
+			</div>
+			</li>
+		</ul>{% endcomment %}{% comment %}
+	</div><!-- end sidebar-->{% endcomment %}
+</div>
+<div class="hr">
+</div>
+{% endblock content %}

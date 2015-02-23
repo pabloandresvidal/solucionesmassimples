@@ -1,0 +1,99 @@
+{%extends "base.html" %}
+
+      {% block base_content %}
+      {% endblock %}
+{% block subheader %}
+
+<!-- SUBHEADER
+================================================== -->
+<div id="subheader">
+	<div class="row">
+		<div class="twelve columns">
+			<p>
+				 PORTAFOLIO
+			</p>
+		</div>
+	</div>
+</div>
+<div class="hr">
+</div>
+
+{% endblock subheader %}
+
+{% block content %}
+{% load cms_tags %}
+<!-- CONTENT 
+================================================== -->
+{% comment %}<div class="row">
+	<div class="twelve columns">
+		<!-- CATEGORIES-->
+		<section id="options" class="clearfix">
+		<ul id="filters" class="option-set clearfix" data-option-key="filter">
+			<li><a href="#filter" data-option-value="*" class="portofoliobutton selected">Show all</a></li>
+			<li><a href="#filter" data-option-value=".nature" class="portofoliobutton">Nature</a></li>
+			<li><a href="#filter" data-option-value=".trains" class="portofoliobutton">Trains</a></li>
+			<li><a href="#filter" data-option-value=".castles" class="portofoliobutton">Castles</a></li>
+		</ul>
+		</section>
+	</div>
+</div>{% endcomment %}
+<div id="portofolio" class="row">
+	<!-- Project 1-->
+	<div class="six columns">
+		<h5>{% static_placeholder "Titulo-Proyecto1-Portafolio" %}</h5>
+		<p>
+		    {% static_placeholder "Texto-Proyecto1-Portafolio" %}
+		</p>
+		<div class="portofoliothumb">
+			{% comment %}<div class="portofoliothumboverlay">
+				<div class="viewgallery">
+				</div>
+				<div class="inner">
+					<a class="projectdetail" href="portofoliodetail.html">+ Detalles del Proyecto</a>
+				</div>
+			</div>{% endcomment %}
+			<!-- image here -->
+			{% static_placeholder "Photo-Proyecto1-Portafolio" %}
+		</div>
+	</div>
+	<!-- Project 2-->
+	<div class="six columns">
+		<h5>{% static_placeholder "Titulo-Proyecto2-Portafolio" %}</h5>
+		<p>
+		    {% static_placeholder "Texto-Proyecto2-Portafolio" %}
+		</p>
+		<div class="portofoliothumb">
+			<!-- image here -->
+			{% static_placeholder "Photo-Proyecto2-Portafolio" %}
+		</div>
+	</div>
+</div>
+
+<div id="portofolio" class="row">
+	<!-- Project 3-->
+	<div class="six columns">
+		<h5>{% static_placeholder "Titulo-Proyecto3-Portafolio" %}</h5>
+		<p>
+		    {% static_placeholder "Texto-Proyecto3-Portafolio" %}
+		</p>
+		<div class="portofoliothumb">
+			<!-- image here -->
+			{% static_placeholder "Photo-Proyecto3-Portafolio" %}
+		</div>
+	</div>
+	<!-- Project 4-->
+	<div class="six columns">
+		<h5>{% static_placeholder "Titulo-Proyecto4-Portafolio" %}</h5>
+		<p>
+		    {% static_placeholder "Texto-Proyecto4-Portafolio" %}
+		</p>
+		<div class="portofoliothumb">
+			<!-- image here -->
+			{% static_placeholder "Photo-Proyecto4-Portafolio" %}
+		</div>
+	</div>
+</div>
+<div class="hr">
+</div>
+
+{% endblock content %}

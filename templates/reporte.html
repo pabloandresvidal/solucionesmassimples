@@ -1,0 +1,96 @@
+{%extends "base.html" %}
+
+
+
+
+{% block slider %}
+{% endblock slider %} 
+		
+{% block subheader %}
+<body>
+<!-- SUBHEADER
+================================================== -->
+<div id="subheader">
+	<div class="row">
+		<div class="twelve columns">
+			<p class="left">
+				 Creación de Reporte Diario para Trabajo
+			</p>
+			<p class="right">
+				 <a href="/dashboard/"> Regreso a mi Inicio</a>
+			</p>
+		</div>
+	</div>
+</div>
+<div class="hr">
+</div>
+{% endblock subheader %} 
+
+{% block content %}
+	    
+<!-- CONTENT 
+================================================== -->
+<div class="row">
+	<!-- CONTACT FORM -->
+	<div class="twelve columns">
+		<div class="wrapcontact">
+			{% if mensajeEstado = "La información fue enviada exitosamente." %}
+				El reporte ha sido guardado exitosamente. Para ver los reportes creados por favor ir a <a href="/misreportesdiarios">Mis Reportes Diarios</a>
+					<h5><a href="/reporte">Realizar otro Reporte Diario</a></h5>
+			{% else %}
+                <h3>{{ mensajeEstado }}</h3>
+
+                    <form id="myForm" action="" method="post" class="basic-grey" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <h1>Reporte Diario Soluciones Simples
+                         <span>Con éste formulario usted podra reportar el trabajo diario realizado en algun servicio: </span>
+                    </h1>
+                        <label>
+                                <span>
+                                    {{ form.trabajo.label }}
+                                </span>
+                                    {{ form.trabajo }}
+                            </label><label>
+                                <span>
+                                    {{ form.report.label }}
+                                </span>
+                                    {{ form.report }}
+                            </label><label>
+                                <span>
+                                    {{ form.foto1.label }}
+                                </span>
+                                    {{ form.foto1 }}
+                            </label><label>
+                                <span>
+                                    {{ form.foto2.label }}
+                                </span>
+                                    {{ form.foto2 }}
+                            </label><label>
+                                <span>
+                                    {{ form.foto3.label }}
+                                </span>
+                                    {{ form.foto3 }}
+                            </label><label>
+                                <span>
+                                    {{ form.foto4.label }}
+                                </span>
+                                    {{ form.foto4 }}
+                            </label><label>
+                                <span>
+                                    {{ form.fecha_creacion.label }}
+                                </span>
+                                    {{ form.fecha_creacion }}
+                            </label>
+                            <br />
+                    <input type="submit" id="submit" class="readmore" value="Enviar Solicitud">
+                    </form>
+            {%  endif %}
+		</div>
+	</div>
+												
+</div>
+<div class="hr">
+</div>
+</body>
+</html>
+{% endblock content %}

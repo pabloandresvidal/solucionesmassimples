@@ -1,0 +1,71 @@
+{%extends "base.html" %}
+
+
+{% block subheader %}
+
+<!-- SUBHEADER
+================================================== -->
+<div id="subheader">
+	<div class="row">
+		<div class="twelve columns">
+			<p class="left">
+				 NUESTROS SERVICIOS
+			</p>
+			<p class="right">
+				 ¡Estámos para cumplir tus sueños!
+			</p>
+		</div>
+	</div>
+</div>
+{% endblock subheader %}
+
+{% block content %}
+{% load cms_tags %}
+<div class="hr">
+</div>
+<!-- CONTENT 
+================================================== -->
+<div class="row">
+    <!-- MAIN CONTENT-->
+	<div class="twelve columns">
+		<div class="sectiontitle">
+			<h4>¿Qué ofrecemos a nuestros clientes?</h4>
+		</div>
+		<!-- Services List-->
+		<div class="six columns noleftmargin">			
+			<h5 class="sidebartitle">{% static_placeholder "Nombre-Servicio1" %}HIDROSANITARIO</h5>
+			<p>
+			<img src="{{ MEDIA_URL }}images/iconos/grifo.png" class="pics" alt=""> {% static_placeholder "Texto-Servicio1" %}
+			</p>
+		</div>
+		<div class="six columns noleftmargin">
+			<h5 class="sidebartitle">{% static_placeholder "Nombre-Servicio2" %}ELÉCTRICO</h5>
+			<p>
+			<img src="{{ MEDIA_URL }}images/iconos/energia.png" class="pics" alt=""> {% static_placeholder "Texto-Servicio2" %}
+			</p>
+		</div>
+		<div class="six columns noleftmargin">
+			<h5 class="sidebartitle">{% static_placeholder "Nombre-Servicio3" %}OBRA GRIS Y BLANCA</h5>
+			<p>
+			<img src="{{ MEDIA_URL }}images/iconos/obrablanca.png" class="pics" alt=""> {% static_placeholder "Texto-Servicio3" %}
+			</p>
+		</div>
+		<div class="six columns noleftmargin">
+			<h5 class="sidebartitle">{% static_placeholder "Nombre-Servicio4" %}CUMPLIMOS TU SUEÑO</h5>
+			<p>
+			<img src="{{ MEDIA_URL }}images/iconos/dream.png" class="pics" alt=""> {% static_placeholder "Texto-Servicio4" %}
+			</p>
+		</div>
+		<div class="clear">
+		</div>
+		<br/>
+		{% comment %}<div class="panel">
+			<p>
+				<b>Phasellus luctus ante in eros suscipit aliquet. Donec convallis scelerisque tellus, quis vulputate lacus laoreet sed. Mauris vitae ultricies neque. Nullam arcu neque, posuere et accumsan quis, euismod id leo. Donec tristique, nisi vel tincidunt faucibus, velit eros pulvinar leo, in sollicitudin nisi nibh ac arcu.</b>
+			</p>
+		</div>	{% endcomment %}
+	</div><!-- end main content-->
+</div>
+<div class="hr">
+</div>
+{% endblock content %}

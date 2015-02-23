@@ -1,0 +1,189 @@
+{% extends "base.html" %}
+
+{% block subheader %}
+<body>
+<!-- SUBHEADER
+================================================== -->
+<div id="subheader">
+	<div class="row">
+		<div class="twelve columns">
+			<p class="left">
+				 Todos los Trabajos
+			</p>
+			<p class="right">
+				 <a href="/dashboard"> Regresar a mi Inicio </a>
+			</p>
+		</div>
+	</div>
+</div>
+<div class="hr">
+</div>
+{% endblock subheader %}
+
+{% block content %}
+
+<div class="row">
+    <!-- MAIN CONTENT-->
+	<div class="twelve columns">
+		<div class="sectiontitle">
+		</div>
+		<!-- Services List-->
+
+		<table id="tablaTodosTrabajos">
+			<thead>
+			<tr>
+				<th>
+					ID Servicio
+				</th>
+				<th>
+					Nombre Servicio
+				</th>
+				<th>
+					Diagnostico Previo
+				</th>
+				<th>
+					Cotización
+				</th>
+                <th>
+					Trabajador
+				</th>
+                <th>
+					Fecha de Creación
+				</th>
+			</tr>
+			</thead>
+			<tbody>
+            {% for trabajo in object_list %}
+			<tr>
+				<td>
+					<a href="/mistrabajos/{{ trabajo.id }}"> {{ trabajo.id_servicio }}</a>
+				</td>
+				<td>
+					{{ trabajo.nombre_servicio }}
+				</td>
+				<td>
+					{{ trabajo.diagnostico_previo }}
+				</td>
+				<td>
+					{{ trabajo.cotizacion }}
+				</td>
+                <td>
+					{{ trabajo.user }}
+				</td>
+                <td>
+					{{ trabajo.fecha_creacion }}
+				</td>
+			</tr>
+            {% endfor %}
+			</tbody>
+			</table>
+
+        {% if is_paginated %}
+            <div>
+                <span>
+                    {% if page_obj.has_previous %}
+                        <a href="/mistrabajos?page={{ page_obj.previous_page_number }}">Anterior</a>
+                    {% endif %}
+                    <span>
+                        Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}.
+                    </span>
+                    {% if page_obj.has_next %}
+                        <a href="/mistrabajos?page={{ page_obj.next_page_number }}">Siguiente</a>
+                    {% endif %}
+                </span>
+            </div>
+        {% endif %}
+		<div class="clear">
+		</div>
+
+		<br/>
+		{% comment %}<div class="panel">
+			<p>
+				<b>Phasellus luctus ante in eros suscipit aliquet. Donec convallis scelerisque tellus, quis vulputate lacus laoreet sed. Mauris vitae ultricies neque. Nullam arcu neque, posuere et accumsan quis, euismod id leo. Donec tristique, nisi vel tincidunt faucibus, velit eros pulvinar leo, in sollicitudin nisi nibh ac arcu.</b>
+			</p>
+		</div>	{% endcomment %}
+	</div><!-- end main content-->
+
+    {% comment %}<!-- SIDEBAR-->
+	<div class="three columns">
+	    <!-- Free Quote Form-->
+		<h5>Filtrar Mis Trabajos</h5>
+		<p>
+			Ingresa a nuestro <a href="/cotizador/">COTIZADOR </a> y te responderemos lo mas rápido posible para cumplir tu sueño.
+		</p>
+		{% endcomment %}{% comment %}<div class="form">
+			<form method="post" action="contact.php" id="contactform">
+				<input type="text" name="name" class="smoothborder" placeholder="Your name *"/>
+				<input type="text" name="email" class="smoothborder" placeholder="E-mail address *"/>
+				<textarea name="comment" class="smoothborder" rows="6" placeholder="Describe your project *"></textarea>
+				<input type="submit" id="submit" class="readmore" value="Submit">
+			</form>
+		</div>{% endcomment %}{% comment %}
+		<br/>
+		<!-- Accordion-->
+		{% endcomment %}{% comment %}<ul class="accordion">
+			<li class="active">
+			<div class="title">
+				<b>Don't miss our treats</b>
+			</div>
+			<div class="content accordiontrick">
+				<p>
+					 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+				</p>
+			</div>
+			</li>
+			<li class="">
+			<div class="title">
+				<b>Holiday Services</b>
+			</div>
+			<div class="content accordiontrick">
+				<p>
+					 Dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+				</p>
+				<p>
+					 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+				</p>
+			</div>
+			</li>
+		</ul>{% endcomment %}{% comment %}
+	</div><!-- end sidebar-->{% endcomment %}
+</div>
+<div class="hr">
+</div>
+{% endblock %}
+
+{% block JAVASCRIPT %}
+<script>
+    $(document).ready(function() {
+        $('#tablaTodosTrabajos').DataTable( {
+            "pagingType": "full_numbers",
+            responsive: {
+            details: {
+                renderer: function ( api, rowIdx ) {
+                    // Select hidden columns for the given row
+                    var data = api.cells( rowIdx, ':hidden' ).eq(0).map( function ( cell ) {
+                        var header = $( api.column( cell.column ).header() );
+
+                        return '<tr>'+
+                                '<td>'+
+                                    header.text()+':'+
+                                '</td> '+
+                                '<td>'+
+                                    api.cell( cell ).data()+
+                                '</td>'+
+                            '</tr>';
+                    } ).toArray().join('');
+
+                    return data ?
+                        $('<table/>').append( data ) :
+                        false;
+                }
+            }
+        },
+            language: {
+                url: '/static/datatables/Spanish.json'
+            }
+        } );
+    } );
+</script>
+{% endblock %}

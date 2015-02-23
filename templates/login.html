@@ -1,0 +1,48 @@
+
+{% extends "base.html" %}
+
+{% block subheader %}
+<!-- SUBHEADER
+================================================== -->
+<div id="subheader">
+	<div class="row">
+		<div class="twelve columns">
+			<p class="left">
+				 Ingreso Empresarial Soluciones + Simples
+			</p>
+		</div>
+	</div>
+</div>
+<div class="hr">
+</div>
+{% endblock subheader %}
+{% block content %}
+    <div id="login">
+        <form name="LoginForm" action="/login/" method="post" class="basic-grey">
+        {% csrf_token %}
+        {% if next %}
+            <input type="hidden" name="next" value="{{ next }}" />
+        {% endif %}
+        <h1>Área Administrativa Soluciones + Simples
+             <span> Ingresa con el Usuario y Contraseña que fue asignado.</span>
+        </h1>
+        <label>
+            <span>
+                Usuario
+            </span>
+                <input type="text" id="username" name="username"  placeholder="Usuario">
+        </label>
+        <label>
+            <span>
+                Contraseña
+            </span>
+                <input type="password" name="password" id="password" placeholder="Contraseña">
+        </label>
+        <div class="control-group">
+            <div class="controls">
+                <button type="submit" class="btn" align="center">Login</button>
+            </div>
+        </div>
+        </form>
+    </div>
+{% endblock %}

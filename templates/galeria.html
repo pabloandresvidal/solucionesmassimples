@@ -1,0 +1,110 @@
+{%extends "base.html" %}
+
+{% block subheader %}
+
+
+<!-- SUBHEADER
+================================================== -->
+<div id="subheader">
+	<div class="row">
+		<div class="twelve columns">
+			<p>
+				 GALERÍA
+			</p>
+		</div>
+	</div>
+</div>
+<div class="hr">
+</div>
+
+{% endblock subheader %}
+{% block content %}
+
+
+<!-- CONTENT
+================================================== -->
+
+<div id="portofolio" class="row">
+	<!-- Project 1-->
+	<div class="six columns category trains">
+        {% load cms_tags %}
+        <h4>{% static_placeholder "TituloGaleria1" %}</h4>
+		<p>
+			 {% static_placeholder "TextoGaleria1" %}
+		</p>
+		<div class="portofoliothumb">
+			<div class="portofoliothumboverlay">
+				<div class="viewgallery">
+					<!--image here -->
+                    {% static_placeholder "ImagenGaleria1" %}
+					<a data-gal="prettyPhoto[gallery]" href="images/temp/folio1.jpg"><img src="images/playgal.png" class="left galleryicon" alt=""> Gallery</a>
+				</div>
+				<div class="inner">
+					<a class="projectdetail" href="portofoliodetail.html">+ Project Details</a>
+				</div>
+			</div>
+			<!-- image here -->
+			<img src="images/temp/folio1.jpg" alt="">
+		</div>
+	</div>
+	<!-- Project 2-->
+	<div class="six columns category castles nature">
+		<h4>{% static_placeholder "TituloGaleria2" %}</h4>
+		<p>
+			 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+		</p>
+		<div class="portofoliothumb">
+			<div class="portofoliothumboverlay">
+				<div class="viewgallery">
+					<a data-gal="prettyPhoto[gallery]" href="images/temp/folio2.jpg"><img src="images/playgal.png" class="left galleryicon" alt=""> Gallery</a>
+				</div>
+				<div class="inner">
+					<a class="projectdetail" href="portofoliodetail.html">+ Project Details</a>
+				</div>
+			</div>
+			<img src="images/temp/folio2.jpg" alt=""/>
+		</div>
+	</div>
+	<!-- Project 3-->
+	<div class="six columns category nature">
+		<h4>{% static_placeholder "TituloGaleria3" %}</h4>
+		<p>
+			 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+		</p>
+		<div class="portofoliothumb">
+			<div class="portofoliothumboverlay">
+				<div class="viewgallery">
+					<a data-gal="prettyPhoto[gallery]" href="images/temp/folio3.jpg"><img src="images/playgal.png" class="left galleryicon" alt=""> Gallery</a>
+				</div>
+				<div class="inner">
+					<a class="projectdetail" href="portofoliodetail.html">+ Project Details</a>
+				</div>
+			</div>
+			<img src="images/temp/folio3.jpg" alt=""/>
+		</div>
+	</div>
+	<!-- Project 4-->
+	<div class="six columns category nature castles">
+		<h4>{% static_placeholder "TituloGaleria4" %}</h4>
+		<p>
+			 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+		</p>
+		<div class="portofoliothumb">
+			<div class="portofoliothumboverlay">
+				<div class="viewgallery">
+					<a data-gal="prettyPhoto[gallery]" href="images/temp/folio4.jpg"><img src="images/playgal.png" class="left galleryicon" alt=""> Gallery</a>
+				</div>
+				<div class="inner">
+					<a class="projectdetail" href="portofoliodetail.html">+ Project Details</a>
+				</div>
+			</div>
+			<img src="images/temp/folio4.jpg" alt=""/>
+		</div>
+	</div>
+</div>
+<div class="hr">
+</div>
+
+
+
+{% endblock content %}

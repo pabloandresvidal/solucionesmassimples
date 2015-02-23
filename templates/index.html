@@ -1,0 +1,227 @@
+{%extends "base.html" %}
+
+{% block hiddenpanel %}
+ 		
+<!-- HIDDEN PANEL 
+================================================== -->
+<div id="panel">
+	<div class="row">
+		<div class="twelve columns">
+			<img src="{{ MEDIA_URL }}images/info.png" class="pics" alt="info">
+			<div class="infotext">
+				Muchas gracias por visitarnos, esperamos que encuentres lo que necesites.
+			</div>
+		</div>
+	</div>
+</div>
+<p class="slide">
+	<a href="#" class="btn-slide"></a>
+</p>
+{% endblock hiddenpanel %} 
+
+
+{% block slider %}
+ 		
+
+<!-- SLIDER 
+================================================== -->
+<div id="ei-slider" class="ei-slider">
+	<ul class="ei-slider-large">
+		<li>
+            <img src="{{ STATIC_URL }}images/Slider/1.jpg" alt="Imagen 1" class="responsiveslide">
+            <div class="ei-title">
+                <h2>Excelentes</h2>
+                <h3>Acabados</h3>
+            </div>
+		</li>
+		<li>
+            <img src="{{ STATIC_URL }}images/Slider/2.jpg" alt="Imagen 2" class="responsiveslide">
+            <div class="ei-title">
+                <h2>Excelentes</h2>
+                <h3>Materiales de Obra</h3>
+            </div>
+		</li>
+		<li>
+            <img src="{{ STATIC_URL }}images/Slider/3.jpg" alt="Imagen 3" class="responsiveslide">
+            <div class="ei-title">
+                <h2>Excelente</h2>
+                <h3>Mano de Obra</h3>
+            </div>
+		</li>
+		<li>
+            <img src="{{ STATIC_URL }}images/Slider/4.jpg" alt="Imagen 4" class="responsiveslide">
+            <div class="ei-title">
+                <h2>Disfruta tu</h2>
+                <h3>Casa</h3>
+            </div>
+		</li>
+
+		{% comment %}<li>
+            <img src="http://placehold.it/1400x500/222" alt="image05" class="responsiveslide">
+            <div class="ei-title">
+                <h2>Dare to</h2>
+                <h3>refuse</h3>
+            </div>
+		</li>
+		<li>
+            <img src="http://placehold.it/1400x500/222" alt="image06" class="responsiveslide">
+            <div class="ei-title">
+                <h2>Dare to</h2>
+                <h3>give</h3>
+            </div>
+		</li>
+		<li>
+            <img src="http://placehold.it/1400x500/222" alt="image07" class="responsiveslide">
+            <div class="ei-title">
+                <h2>Dare to</h2>
+                <h3>receive</h3>
+            </div>
+		</li>
+		<li>
+            <img src="http://placehold.it/1400x500/222" alt="image08" class="responsiveslide">
+            <div class="ei-title">
+                <h2>Dare to </h2>
+                <h3>Love</h3>
+            </div>
+		</li>
+		<li>
+            <img src="http://placehold.it/1400x500/222" alt="image09" class="responsiveslide">
+            <div class="ei-title">
+                <h2>Dare to</h2>
+                <h3>Forgive</h3>
+            </div>
+		</li>
+		<li>
+            <img src="http://placehold.it/1400x500/222" alt="image10" class="responsiveslide">
+            <div class="ei-title">
+                <h2>Stand up & </h2>
+                <h3>Live</h3>
+            </div>
+		</li>{% endcomment %}
+	</ul>
+	<!-- slider-thumbs -->
+	<ul class="ei-slider-thumbs">
+		<li class="ei-slider-element">Current</li>
+		<li><a href="#">Imagen1</a><img src="{{ MEDIA_URL }}images/Slider/1.jpg" class="slideshowthumb" alt="thumb01"/></li>
+		<li><a href="#">Imagen2</a><img src="{{ MEDIA_URL }}images/Slider/2.jpg" class="slideshowthumb" alt="thumb02"/></li>
+		<li><a href="#">Imagen3</a><img src="{{ MEDIA_URL }}images/Slider/3.jpg" class="slideshowthumb" alt="thumb03"/></li>
+		<li><a href="#">Imagen4</a><img src="{{ MEDIA_URL }}images/Slider/4.jpg" class="slideshowthumb" alt="thumb04"/></li>
+	</ul>
+</div>
+<div class="minipause">
+</div>
+
+{% endblock slider %} 
+
+{% block subheader %}
+ 		
+
+<!-- SUBHEADER
+================================================== -->
+{% load cms_tags %}
+<div id="subheader">
+	<div class="row">
+		<div class="twelve columns">
+			<p class="text-center">
+				 {% static_placeholder "TextoCita" %}
+			</p>
+		</div>
+	</div>
+</div>
+
+{% endblock subheader %} 
+
+
+
+{% block content %}
+
+<!-- ANIMATED COLUMNS
+================================================== -->
+{% comment %}<div class="row">
+	<div class="twelve columns">
+		<ul class="ca-menu">
+			<li>
+			<a href="#">
+			<span class="ca-icon">F</span>
+			<div class="ca-content">
+				<h2 class="ca-main">Pintura</h2>
+				<h3 class="ca-sub">Across all major devices</h3>
+			</div>
+			</a>
+			</li>
+			<li>
+			<a href="#">
+			<span class="ca-icon">H</span>
+			<div class="ca-content">
+				<h2 class="ca-main">Estuco</h2>
+				<h3 class="ca-sub">Straight to the point</h3>
+			</div>
+			</a>
+			</li>
+			<li>
+			<a href="#">
+			<span class="ca-icon">N</span>
+			<div class="ca-content">
+				<h2 class="ca-main">Relleno</h2>
+				<h3 class="ca-sub">Full slider, boxed or none</h3>
+			</div>
+			</a>
+			</li>
+			<li>
+			<a href="#">
+			<span class="ca-icon">K</span>
+			<div class="ca-content">
+				<h2 class="ca-main">Plomeria</h2>
+				<h3 class="ca-sub">Isotop & PrettyPhoto</h3>
+			</div>
+			</a>
+			</li>
+		</ul>
+	</div>
+</div>{% endcomment %}
+
+<!-- CONTENT 
+================================================== -->
+
+<div class="row">
+	<div class="twelve columns">
+		<div class="centersectiontitle">
+			<h4>Nuestros Servicios</h4>
+		</div>
+	</div>
+	<div class="four columns">
+		<h5>{% static_placeholder "TituloServicio1" %}</h5>
+		<p>
+			 {% static_placeholder "TextoServicio1" %}
+		</p>
+		{% comment %}<p>
+			<a href="#" class="readmore">Mas información</a>
+		</p>{% endcomment %}
+	</div>
+	<div class="four columns">
+		<h5>{% static_placeholder "TituloServicio2" %}</h5>
+		<p>
+			 {% static_placeholder "TextoServicio2" %}
+		</p>
+	</div>
+	<div class="four columns">
+<h5>{% static_placeholder "TituloServicio3" %}</h5>
+		<p>
+			 {% static_placeholder "TextoServicio3" %}
+		</p>
+	</div>
+</div>
+<div class="hr">
+</div>
+<!-- TESTIMONIALS 
+================================================== -->
+<div class="row">
+	<div class="twelve columns">
+		<div id="testimonials">
+			{% static_placeholder "Testimonios" %}
+		</div>
+		<!--end testimonials-->
+	</div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,76 @@
+{%extends "base.html" %}
+
+
+
+
+{% block slider %}
+{% endblock slider %} 
+		
+{% block subheader %}
+<body>
+<!-- SUBHEADER
+================================================== -->
+<div id="subheader">
+	<div class="row">
+		<div class="twelve columns">
+			<p class="left">
+				 Contáctenos y coticemos nuestro proyecto juntos!
+			</p>
+			<p class="right">
+				 ¡Envia tu solicitud ya!
+			</p>
+		</div>
+	</div>
+</div>
+<div class="hr">
+</div>
+{% endblock subheader %} 
+
+{% block content %}
+	    
+<!-- CONTENT 
+================================================== -->
+
+<div class="row">
+	<!-- CONTACT FORM -->
+	<div class="twelve columns">
+		<div class="wrapcontact">
+			{% if mensajeEstado = "La información fue enviada exitosamente." %}
+				<div class="panel">
+                <h4 align="center">Muchas gracias por utilizar el cotizador de Soluciones + Simples, un asesor lo contactará en las proximas dos horas con toda la información de su nuevo proyecto.</h4>
+					<h5 align="center"><a href="/cotizador" class="success">Realizar otra cotización</a></h5>
+                </div>
+			{% else %}
+                <div class="done">
+                    <div class="alert-box success">
+                        Mensaje Enviado! <a href="" class="close">x</a>
+                    </div>
+                </div>
+                <h3>{{ mensajeEstado }}</h3>
+
+                    <form action="" method="post" class="basic-grey">
+                    {% csrf_token %}
+                    <h1>Cotizador Soluciones Simples
+                         <span>Con éste panel de cotización usted podrá obtener información previa a las soluciones más simples para su hogar: </span>
+                    </h1>
+                        {% for field in form %}
+                                <label>
+                                    <span>
+                                        {{ field.label }}
+                                    </span>
+                                        {{ field }}
+                                </label>
+                            {% endfor %}
+                    <input type="submit" id="submit" class="enviar_solicitud" value="Enviar Solicitud">
+                    </form>
+			{% endif %}
+						
+		</div>
+	</div>
+												
+</div>
+<div class="hr">
+</div>
+</body>
+</html>
+{% endblock content %}

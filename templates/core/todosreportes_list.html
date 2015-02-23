@@ -1,0 +1,184 @@
+{% extends "base.html" %}
+
+{% block subheader %}
+<body>
+<!-- SUBHEADER
+================================================== -->
+<div id="subheader">
+	<div class="row">
+		<div class="twelve columns">
+			<p class="left">
+				 Todos los Reportes Diarios
+			</p>
+			<p class="right">
+				 <a href="/dashboard"> Regresar a mi Inicio </a>
+			</p>
+		</div>
+	</div>
+</div>
+<div class="hr">
+</div>
+{% endblock subheader %}
+
+{% block content %}
+
+<div class="row">
+    <!-- MAIN CONTENT-->
+	<div class="nine columns">
+		<div class="sectiontitle">
+		</div>
+		<!-- Services List-->
+		<table id="tablaTodosReportes">
+			<thead>
+			<tr>
+				<th>
+					Trabajo
+				</th>
+				<th>
+					report
+				</th>
+				<th>
+					Foto 1
+				</th>
+				<th>
+					Foto 2
+				</th>
+                <th>
+					Foto 3
+				</th>
+                <th>
+					Foto 4
+				</th>
+                <th>
+					Fecha de Creación
+				</th>
+			</tr>
+			</thead>
+			<tbody>
+            {% for trabajo in object_list %}
+			<tr>
+				<td>
+					{{ trabajo.trabajo }}
+				</td>
+				<td>
+					{{ trabajo.report }}
+				</td>
+				<td>
+					<a href="/{{ trabajo.foto1 }}"> Foto1 </a>
+				</td>
+				<td>
+                    {% if trabajo.foto2 %}
+					    <a href="/{{ trabajo.foto2 }}"> Foto2 </a>
+                    {% endif %}
+				</td>
+                <td>
+					{% if trabajo.foto3 %}
+					    <a href="/{{ trabajo.foto3 }}"> Foto3 </a>
+                    {% endif %}
+				</td>
+                <td>
+					{% if trabajo.foto4 %}
+					    <a href="/{{ trabajo.foto4 }}"> Foto4 </a>
+                    {% endif %}
+				</td>
+                <td>
+					{{ trabajo.fecha_creacion }}
+				</td>
+			</tr>
+            {% endfor %}
+			</tbody>
+			</table>
+		<div class="clear">
+		</div>
+		<br/>
+		{% comment %}<div class="panel">
+			<p>
+				<b>Phasellus luctus ante in eros suscipit aliquet. Donec convallis scelerisque tellus, quis vulputate lacus laoreet sed. Mauris vitae ultricies neque. Nullam arcu neque, posuere et accumsan quis, euismod id leo. Donec tristique, nisi vel tincidunt faucibus, velit eros pulvinar leo, in sollicitudin nisi nibh ac arcu.</b>
+			</p>
+		</div>	{% endcomment %}
+	</div><!-- end main content-->
+
+    <!-- SIDEBAR-->
+	<div class="three columns">
+	    <!-- Free Quote Form-->
+		<h5>Filtrar Mis Trabajos</h5>
+		<p>
+			Ingresa a nuestro <a href="/cotizador/">COTIZADOR </a> y te responderemos lo mas rápido posible para cumplir tu sueño.
+		</p>
+		{% comment %}<div class="form">
+			<form method="post" action="contact.php" id="contactform">
+				<input type="text" name="name" class="smoothborder" placeholder="Your name *"/>
+				<input type="text" name="email" class="smoothborder" placeholder="E-mail address *"/>
+				<textarea name="comment" class="smoothborder" rows="6" placeholder="Describe your project *"></textarea>
+				<input type="submit" id="submit" class="readmore" value="Submit">
+			</form>
+		</div>{% endcomment %}
+		<br/>
+		<!-- Accordion-->
+		{% comment %}<ul class="accordion">
+			<li class="active">
+			<div class="title">
+				<b>Don't miss our treats</b>
+			</div>
+			<div class="content accordiontrick">
+				<p>
+					 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+				</p>
+			</div>
+			</li>
+			<li class="">
+			<div class="title">
+				<b>Holiday Services</b>
+			</div>
+			<div class="content accordiontrick">
+				<p>
+					 Dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+				</p>
+				<p>
+					 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+				</p>
+			</div>
+			</li>
+		</ul>{% endcomment %}
+	</div><!-- end sidebar-->
+</div>
+<div class="hr">
+</div>
+{% endblock %}
+
+
+{% block JAVASCRIPT %}
+<script>
+    $(document).ready(function() {
+        $('#tablaTodosReportes').DataTable( {
+            "pagingType": "full_numbers",
+            responsive: {
+            details: {
+                renderer: function ( api, rowIdx ) {
+                    // Select hidden columns for the given row
+                    var data = api.cells( rowIdx, ':hidden' ).eq(0).map( function ( cell ) {
+                        var header = $( api.column( cell.column ).header() );
+
+                        return '<tr>'+
+                                '<td>'+
+                                    header.text()+':'+
+                                '</td> '+
+                                '<td>'+
+                                    api.cell( cell ).data()+
+                                '</td>'+
+                            '</tr>';
+                    } ).toArray().join('');
+
+                    return data ?
+                        $('<table/>').append( data ) :
+                        false;
+                }
+            }
+        },
+            language: {
+                url: '/static/datatables/Spanish.json'
+            }
+        } );
+    } );
+</script>
+{% endblock %}

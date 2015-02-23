@@ -1,0 +1,28 @@
+<div class="sectiontitle">
+			<h4>¿Qué ofrecemos a nuestros clientes?</h4>
+		</div>
+		<!-- Services List-->
+		<div class="six columns noleftmargin">			
+			<h5 class="sidebartitle">{% static_placeholder "Nombre-Servicio1" %}HIDROSANITARIO</h5>
+			<p>
+			<img src="{{ MEDIA_URL }}images/iconos/grifo.png" class="pics" alt=""> {% static_placeholder "Texto-Servicio1" %}Reparaciones y modificaciones en instalaciones hidrosanitarias de todo tipo (p.ej. Lavadoras, lavamanos, duchas, piscinas/jacuzzi/baño turco, sanitarios, sifones, canales de aguas lluvias etc.)
+			</p>
+		</div>
+		<div class="six columns noleftmargin">
+			<h5 class="sidebartitle">{% static_placeholder "Nombre-Servicio2" %}ELÉCTRICO</h5>
+			<p>
+			<img src="{{ MEDIA_URL }}images/iconos/energia.png" class="pics" alt=""> {% static_placeholder "Texto-Servicio2" %}Reparaciones y modificaciones en instalaciones eléctricas y de datos de todo tipo (p.ej. Tomacorrientes, interruptores, extensiones, iluminación, puntos de acceso wi-fi, tablero de breakers, conversión a sistemas ahorradores como LED, paneles solares etc.)
+			</p>
+		</div>
+		<div class="six columns noleftmargin">
+			<h5 class="sidebartitle">{% static_placeholder "Nombre-Servicio3" %}OBRA GRIS Y BLANCA</h5>
+			<p>
+			<img src="{{ MEDIA_URL }}images/iconos/obrablanca.png" class="pics" alt=""> {% static_placeholder "Texto-Servicio3" %}Reparaciones y modificaciones en todo tipo de muros, cubiertas, enchapes, carpintería de madera, aluminio, divisiones de ducha, sistemas de oficina, y espejos  de todo tipo.  (p.ej. Pintura de fachada, reparación de filtraciones en cubierta o "goteras", resanes locativos y generales en estuco y/o repellos, instalación de parasoles, ampliaciones de espacios integrales, cambio de vidrios en ventaneria etc.)
+			</p>
+		</div>
+		<div class="six columns noleftmargin">
+			<h5 class="sidebartitle">{% static_placeholder "Nombre-Servicio4" %}CUMPLIMOS TU SUEÑO</h5>
+			<p>
+			<img src="{{ MEDIA_URL }}images/iconos/dream.png" class="pics" alt=""> {% static_placeholder "Texto-Servicio4" %}Remodelaciones de espacios según sus sueños, creamos la alcoba, el estudio, la cocina, la sala, el baño, la zona de entretenimiento interior o exterior  que usted se merece. Contamos con un equipo de arquitectos entrenados en las tendencias clásicas, modernas, vanguardistas o simplemente sobrias y elegantes. Este ítem incluye ayudas visuales fotorealistas de como quedara su proyecto para cumplir con sus expectativas al 100%.
+			</p>
+		</div>

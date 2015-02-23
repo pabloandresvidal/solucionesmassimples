@@ -1,0 +1,171 @@
+﻿{% load cms_tags sekizai_tags menu_tags placeholder_tags %}
+
+<!DOCTYPE html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+<!-- Set the viewport width to device width for mobile -->
+<meta name="viewport" content="width=device-width"/>
+  
+{% load i18n %}
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+{% block title %}<title> Soluciones + Simples {% endblock title %}</title>
+
+<meta charset="UTF-8">
+{% block stylesheet %}
+<!-- CSS Files-->
+<link rel="stylesheet" href="{{ STATIC_URL }}stylesheets/style.css">
+<link rel="stylesheet" href="{{ STATIC_URL }}stylesheets/homepage.css"><!-- homepage stylesheet -->
+<link rel="stylesheet" href="{{ STATIC_URL }}stylesheets/skins/blue.css"><!-- skin color -->
+<link rel="stylesheet" href="{{ STATIC_URL }}stylesheets/responsive.css">
+<link rel="stylesheet" href="{{ STATIC_URL }}datatables/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="{{ STATIC_URL }}datatables/css/dataTables.responsive.css">
+<!-- IE Fix for HTML5 Tags -->
+<!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->  
+{% endblock stylesheet %}
+{% render_block "css" %}
+
+</head>
+
+<body>
+      {% cms_toolbar %}
+
+
+	  {% block hiddenpanel %}
+ 	  {% endblock hiddenpanel %}
+
+ 		{% block header %}
+		 		
+<!-- HEADER
+================================================== -->
+<div class="row">	
+		<div class="four columns">
+			<div class="logo">
+				<img class="logo" src="{{ STATIC_URL }}images/LogoDefinitivo.jpg" class="pics">
+			</div>
+		</div>
+		<div class="eight columns noleftmarg">		
+			<nav id="nav-wrap">
+				<ul class="nav-bar sf-menu">
+				
+					<li class="current">
+					<a href="/">Inicio</a>
+					</li>
+                    <li>
+					    <a href="/quienessomos">Quiénes somos</a>
+					</li>
+                    <li>
+					    <a href="/servicios">Servicios</a>
+					</li>
+					<li>
+					    <a href="/portafolio">Portafolio</a>
+					</li>
+					<li>
+					    <a href="/cotizador">Cotizador</a>
+					</li>
+                    <li>
+					    <a href="http://blog.solucionesmassimples.com">Blog</a>
+					</li>
+					
+				</ul>
+				</nav>
+				</div>	
+		</div>
+		<div class="clear">
+		</div>
+ 		{% endblock header %} 
+
+		{% block slider %}
+ 		{% endblock slider %} 
+		
+		{% block subheader %}
+ 		{% endblock subheader %}
+	    {% block content %}
+	    {% endblock content %}
+
+
+
+<!-- FOOOTER 
+================================================== -->
+<div id="footer">
+	<footer class="row">
+	<p class="back-top floatright">
+		<a href="#top"><span></span></a>
+	</p>
+	<div class="four columns">
+        {% static_placeholder "FinalMensaje" %}
+        {% if not request.user.is_authenticated %}
+            <p><a href="/login">Ingreso Empresarial</a> </p>
+        {% endif %}
+        {% if request.user.is_authenticated %}
+            <p> <a href="/dashboard">Ir a la Plataforma</a> </p>
+            <p> <a href="/logout">Cerrar Sessión</a> </p>
+        {% endif %}
+	</div>
+	<div class="four columns">
+		<h1>Social</h1>
+		<div class="social facebook">
+			<a href="#"></a>
+		</div>
+		<div class="social twitter">
+			<a href="#"></a>
+		</div>
+	</div>
+{% comment %}	<div class="four columns">
+		<h1 class="newsmargin">NEWSLETTER</h1>
+		<div class="row collapse newsletter floatright">
+			<div class="ten mobile-three columns">
+				<input type="text" class="nomargin" placeholder="Enter your e-mail address...">
+			</div>
+			<div class="two mobile-one columns">
+				<a href="#" class="postfix button expand">GO</a>
+			</div>
+		</div>
+	</div>{% endcomment %}
+	</footer>
+</div>
+<div class="copyright">
+	<div class="row">
+		<div class="six columns">
+			 &copy;<span class="small"> 2014 Tech Design Colombia</span>
+		</div>
+		<div class="six columns">
+			<span class="small floatright"> Soluciones + Simples</span>
+		</div>
+	</div>
+</div>
+
+<!-- JAVASCRIPTS 
+================================================== -->
+<!-- Javascript files placed here for faster loading -->
+<script src="{{ MEDIA_URL }}javascripts/foundation.min.js"></script>   
+<script src="{{ MEDIA_URL }}javascripts/jquery.easing.1.3.js"></script>
+<script src="{{ MEDIA_URL }}javascripts/elasticslideshow.js"></script>
+<script src="{{ MEDIA_URL }}javascripts/jquery.carouFredSel-6.0.5-packed.js"></script>
+<script src="{{ MEDIA_URL }}javascripts/jquery.cycle.js"></script>
+<script src="{{ MEDIA_URL }}javascripts/app.js"></script>
+<script src="{{ MEDIA_URL }}javascripts/modernizr.foundation.js"></script>
+<script src="{{ MEDIA_URL }}javascripts/slidepanel.js"></script>
+<script src="{{ MEDIA_URL }}javascripts/scrolltotop.js"></script>
+<script src="{{ MEDIA_URL }}javascripts/hoverIntent.js"></script>
+<script src="{{ MEDIA_URL }}javascripts/superfish.js"></script>
+<script src="{{ MEDIA_URL }}javascripts/responsivemenu.js"></script>
+<script src="{{ MEDIA_URL }}javascripts/jquery.tweet.js"></script>
+<script src="{{ MEDIA_URL }}javascripts/twitterusername.js"></script>
+<script src="{{ STATIC_URL }}javascripts/jquery-1.11.1.min.js"></script>
+<script src="{{ STATIC_URL }}javascripts/jquery.formset.js"></script>
+<script src="{{ STATIC_URL }}datatables/js/jquery.dataTables.min.js"></script>
+<script src="{{ STATIC_URL }}datatables/js/dataTables.responsive.min.js"></script>
+
+{% render_block "js" %}
+{% block JAVASCRIPT %} {% endblock JAVASCRIPT %}
+</body>
+</html>
